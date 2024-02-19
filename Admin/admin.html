@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a.logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav a.right {
+            float: right;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav a.right, nav a.logo {
+                float: none;
+                display: block;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo">Your Logo</a>
+    <a href="#home" class="right">Home</a>
+    <a href="#categories" class="right">Categories</a>
+    <a href="#offers" class="right">Offers</a>
+    <a href="#admin" class="right">Admin</a>
+</nav>
+
+<!-- Content of your page goes here with corresponding section IDs -->
+
+<section id="home">
+    <h2>Home Section</h2>
+    <!-- Your home section content -->
+</section>
+
+<section id="categories">
+    <h2>Categories Section</h2>
+    <!-- Your categories section content -->
+</section>
+
+<section id="offers">
+    <h2>Offers Section</h2>
+    <!-- Your offers section content -->
+</section>
+
+<section id="admin">
+    <h2>Admin Section</h2>
+    <!-- Your admin section content -->
+</section>
+
+</body>
+</html>
