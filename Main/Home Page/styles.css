@@ -1,21 +1,16 @@
 
-navbar{
-    display: inline;
-}
 
-*{
-    background-color: rgb(48, 116, 82);
+.navbar{
+    font-family: "Aesthet Nova W05 Black";
+    color: rgb(255, 239, 193);
+    margin: 10px 5px;   
+    background-color: rgb(41, 115, 74);
 }
 
 h1{
     font-family: "Aesthet Nova W05 Black";
 }
 
-navbar{
-    font-family: "Aesthet Nova W05 Black";
-    color: rgb(255, 239, 193);
-    margin: 10px 5px;   
-}
 
 .swiper {
     width: 80%;
