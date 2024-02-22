@@ -9,12 +9,17 @@
 
 h1{
     font-family: "Aesthet Nova W05 Black";
+    margin: auto;
+    text-align: center;
 }
 
-
+nav, .navbar-brand{
+  padding: 0px 10px;
+}
 .swiper {
-    width: 80%;
-    height: fit-content;
+    display: block;
+    width: 90%;
+    height: 90%;
   }
 
   .swiper-slide img{
@@ -27,6 +32,11 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
+
+  .navbar a {
+    text-decoration: none;
+    color: rgb(255, 239, 193);
+}
+  
   
