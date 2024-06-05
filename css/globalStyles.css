@@ -131,9 +131,6 @@ textarea {
     outline: none !important
 }
 
-@-ms-viewport {
-    width: device-width
-}
 
 .dk-select, .dk-select *, .dk-select-multi, .dk-select-multi *, .dk-select-multi :after, .dk-select-multi :before, .dk-select :after, .dk-select :before {
     box-sizing: border-box
@@ -4745,6 +4742,7 @@ header.primary .main {
     }
 
     header.primary .main .container {
+        display: flex;
         -ms-flex-line-pack: start;
         align-content: flex-start;
         -ms-flex-align: stretch;
@@ -4766,7 +4764,6 @@ header.primary .main {
     }
 
         header.primary .main .logo a {
-            display: block;
             padding: 19px 6vw 0;
             width: 160px;
             height: 100%;
@@ -4858,6 +4855,7 @@ header.primary .main .search-btn {
         }
 
 body.on-scroll header.primary .main {
+    height: 130px;
     transition: height .5s cubic-bezier(.77,0,.175,1) 0s,background 1s cubic-bezier(.77,0,.175,1) .5s,transform 1s cubic-bezier(.77,0,.175,1) .3s
 }
 
@@ -4893,7 +4891,8 @@ body.on-scroll header.primary:not(.search-visible) .main {
     }
 
 body.on-scroll header.primary:not(.search-visible) .main {
-    height: 80px
+    height: 130px;
+
 }
 
     body.on-scroll header.primary:not(.search-visible) .main .logo svg g {
@@ -4907,7 +4906,7 @@ body.on-scroll header.primary:not(.search-visible) .main {
         }
 
     body.on-scroll header.primary:not(.search-visible) .main .search-btn {
-        margin-top: 15px
+        margin-top: 54px;
     }
 
 @keyframes pulse {
@@ -14977,9 +14976,7 @@ section.video-player {
             order: 2
         }
 
-        header.primary .main .logo a {
-            padding: 34px 0 0
-        }
+    
 
         header.primary .main .logo svg {
             width: 71px;
@@ -15013,7 +15010,7 @@ section.video-player {
     }
 
         body.on-scroll header.primary:not(.search-visible) .main nav.desktop > ul > li > a {
-            padding-top: 31px
+            padding-top: 68px
         }
 
     body.single-auction:not(.on-scroll):not(.search-visible) header.primary .main, body.single-people:not(.on-scroll):not(.search-visible) header.primary .main, body.single-property:not(.on-scroll):not(.search-visible) header.primary .main {
@@ -15496,7 +15493,7 @@ section.video-player {
 
 @media (min-width:1230px) and (max-width:1330px) {
     header.primary .main .container {
-        padding: 0 40px
+        padding: 0 40px;
     }
 
     header.primary .main .logo, header.primary .main .search-btn {
@@ -18486,7 +18483,7 @@ section.video-player {
     }
 
     header.primary.mobile-nav-visible .logo a, header.primary.on-scroll .logo a, header.primary.search-visible .logo a, header.primary.video-visible .logo a {
-        padding-top: 25px
+        padding-top: 0;
     }
 
     header.primary.mobile-nav-visible .logo svg g#text, header.primary.on-scroll .logo svg g#text, header.primary.search-visible .logo svg g#text, header.primary.video-visible .logo svg g#text {
