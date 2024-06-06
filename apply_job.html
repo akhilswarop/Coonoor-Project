@@ -1,109 +1,41 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/globalStyles.css">
-    <title>Image Grid</title>
-    <style>
-        @font-face {
-            font-family: 'AktivGroteskBold';
-            src: url('fonts/aktivgrotesk-bold.woff2') format('woff2'),
-                 url('fonts/aktivgrotesk-bold.woff') format('woff'),
-                 url('fonts/aktivgrotesk-bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'AktivGroteskBold', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f8f9fa; /* Light background color matching the site's design language */
-            color: #333;
-        }
-
-        .header {
-            text-align: center;
-            background-color: #007bff; /* Matching the site's primary color */
-            color: white;
-            padding: 20px 0;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 16px;
-            padding: 16px;
-        }
-
-        .grid-item {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
+  <title>Google Drive Image Gallery</title>
+  <style>
+    #image-gallery img {
+      width: 200px;
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="header">Available Jobs</div>
-    <div class="grid-container">
-        <a href="link1.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0020.jpg" alt="Image 1">
-        </a>
-        <a href="link2.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0021.jpg" alt="Image 2">
-        </a>
-        <a href="link3.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0022.jpg" alt="Image 3">
-        </a>
-        <a href="link4.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0023.jpg" alt="Image 4">
-        </a>
-        <a href="link5.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0024.jpg" alt="Image 5">
-        </a>
-        <a href="link6.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0025.jpg" alt="Image 6">
-        </a>
-        <a href="link7.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0026.jpg" alt="Image 7">
-        </a>
-        <a href="link8.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0027.jpg" alt="Image 8">
-        </a>
-        <a href="link9.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0028.jpg" alt="Image 9">
-        </a>
-        <a href="link10.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0029.jpg" alt="Image 10">
-        </a>
-        <a href="link11.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0030.jpg" alt="Image 11">
-        </a>
-        <a href="link12.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0031.jpg" alt="Image 12">
-        </a>
-        <a href="link13.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0032.jpg" alt="Image 13">
-        </a>
-        <a href="link14.html" class="grid-item">
-            <img src="images/posters/IMG-20240605-WA0033.jpg" alt="Image 14">
-        </a>
-    </div>
+  <h1>Google Drive Image Gallery</h1>
+  <div id="image-gallery"></div>
+
+  <script>
+    function fetchImages() {
+      const folderId = '1Ow5lpZOU3TLXVJfPf50E7XPJjc0x_iEl'; // Replace with your actual folder ID
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbwMXBM5AELAFCHyDx73xGtdbEbjQbhtQf5ki9g9BUv8WIw6d-WXt7C3TjCoZLt35m0kiQ/exec'; // Replace with your deployed web app URL
+
+      fetch(`${webAppUrl}?fid=${folderId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === 'success') {
+            var gallery = document.getElementById('image-gallery');
+            gallery.innerHTML = '';
+            data.data.forEach(function(image) { // Use "img" instead of "image" as the parameter name
+              var iframe = document.createElement('iframe');
+              iframe.src = `https://drive.google.com/file/d/${image.img_id}/preview`;
+              gallery.appendChild(iframe); // Append the iframe, not the img
+            });
+          }
+        })
+        .catch(error => console.error('Error fetching images:', error));
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchImages);
+  </script>
+
 </body>
 </html>
