@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Google Drive Image Gallery</title>
-  <style>
-    #image-gallery img {
-      width: 200px;
-      margin: 10px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-  <h1>Google Drive Image Gallery</h1>
+  
+</body>
+</html><html>
+<head>
+  <link rel="stylesheet" href="css/apply-job.css">
+  <title>Apply</title>
+</head>
+<body>
+  <h1>Available Jobs</h1>
   <div id="image-gallery"></div>
 
   <script>
@@ -24,10 +28,24 @@
           if (data.status === 'success') {
             var gallery = document.getElementById('image-gallery');
             gallery.innerHTML = '';
-            data.data.forEach(function(image) { // Use "img" instead of "image" as the parameter name
+            data.data.forEach(function(image) {
+              var container = document.createElement('div');
+              container.classList.add('iframe-container');
+
               var iframe = document.createElement('iframe');
               iframe.src = `https://drive.google.com/file/d/${image.img_id}/preview`;
-              gallery.appendChild(iframe); // Append the iframe, not the img
+              iframe.title = image.name;
+
+              var button = document.createElement('button');
+              button.classList.add('apply-button');
+              button.textContent = 'Apply';
+              button.addEventListener('click', function() {
+                alert(`Apply button clicked for image: ${image.img_id}`);
+              });
+
+              container.appendChild(iframe);
+              container.appendChild(button);
+              gallery.appendChild(container);
             });
           }
         })
