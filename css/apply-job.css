@@ -81,4 +81,9 @@ body {
 section.header-hero.viewed.in-view {
   margin-top: 150;
   font-size: 45px;
+  overflow-y: scroll;
+}
+
+section.header-hero.viewed.in-view::-webkit-scrollbar {
+  display: none;
 }
