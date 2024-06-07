@@ -87,3 +87,21 @@ section.header-hero.viewed.in-view {
 section.header-hero.viewed.in-view::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 1000px) {
+  section.header-hero.viewed.in-view {
+    display: block;
+    font-size: 45px;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  
+section.header-hero.viewed.in-view {
+  display: block;
+  margin-top: 100;
+  font-size: 45px;
+  overflow-y: scroll;
+}
+}
