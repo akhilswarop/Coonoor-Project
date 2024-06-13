@@ -46,7 +46,7 @@
 }
 
 *, :after, :before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 :focus {
@@ -4101,7 +4101,7 @@ header.primary nav.desktop {
 
     header.primary nav.desktop > ul {
         font-size: 0;
-        height: 100%
+        height: 130px;
     }
 
         header.primary nav.desktop > ul > li {
