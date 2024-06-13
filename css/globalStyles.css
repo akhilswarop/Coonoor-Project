@@ -4281,7 +4281,7 @@ header.primary nav.mobile {
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
         width: 100%;
-        margin-top: 30;
+        margin-top: 40px;
     }
 
         header.primary nav.mobile .mobile-menu a {
@@ -4513,7 +4513,8 @@ header.primary.mobile-nav-visible nav.mobile {
 }
 
 header.primary .mobile-buttons {
-    display: block;
+    display: flex;
+    margin-top: -30px;
     font-size: 0;
     top: 0;
     right: 0;
@@ -4521,7 +4522,7 @@ header.primary .mobile-buttons {
 }
 
     header.primary .mobile-buttons .mobile__menu-btn, header.primary .mobile-buttons .mobile__search-btn {
-        margin-top: 12;
+        margin-top: 38px;
         cursor: pointer;
         display: inline-block;
         position: relative;
@@ -4738,7 +4739,6 @@ header.primary .main {
         left: 0;
         position: absolute;
         width: 0;
-        /* height: 1px; */
         transition: all 1s cubic-bezier(.77,0,.175,1) .15s;
     }
 
@@ -18809,7 +18809,7 @@ img.logo-head-white.logo-white {
 
 .profile {
     width: 50% !important;
-    margin-top: 36;
+    margin-top: 36px;
     margin-left: 21px !important;
 }
 
