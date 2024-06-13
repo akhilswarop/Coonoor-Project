@@ -4280,7 +4280,8 @@ header.primary nav.mobile {
         display: block;
         -ms-flex: 1 0 auto;
         flex: 1 0 auto;
-        width: 100%
+        width: 100%;
+        margin-top: 30;
     }
 
         header.primary nav.mobile .mobile-menu a {
@@ -4520,11 +4521,12 @@ header.primary .mobile-buttons {
 }
 
     header.primary .mobile-buttons .mobile__menu-btn, header.primary .mobile-buttons .mobile__search-btn {
+        margin-top: 12;
         cursor: pointer;
         display: inline-block;
         position: relative;
         text-align: center;
-        vertical-align: top
+        vertical-align: top;
     }
 
 header.primary .mobile__search-btn {
@@ -4563,7 +4565,7 @@ header.primary .mobile__menu-btn {
         width: 24px;
         height: 24px;
         text-align: center;
-        transition: margin-top .5s cubic-bezier(.77,0,.175,1) 0s
+        transition: margin-top .5s cubic-bezier(.77,0,.175,1) 0s;
     }
 
         header.primary .mobile__menu-btn i.menu span:after, header.primary .mobile__menu-btn i.menu span:before {
@@ -4736,8 +4738,8 @@ header.primary .main {
         left: 0;
         position: absolute;
         width: 0;
-        height: 1px;
-        transition: all 1s cubic-bezier(.77,0,.175,1) .15s
+        /* height: 1px; */
+        transition: all 1s cubic-bezier(.77,0,.175,1) .15s;
     }
 
     header.primary .main .container {
@@ -18498,7 +18500,7 @@ section.video-player {
         }
 
     header.primary.mobile-nav-visible .mobile__menu-btn i.menu, header.primary.on-scroll .mobile__menu-btn i.menu, header.primary.search-visible .mobile__menu-btn i.menu, header.primary.video-visible .mobile__menu-btn i.menu {
-        margin-top: 27px
+        margin-top: 38px;
     }
 
         header.primary.mobile-nav-visible .mobile__menu-btn i.menu span:after, header.primary.mobile-nav-visible .mobile__menu-btn i.menu span:before, header.primary.on-scroll .mobile__menu-btn i.menu span:after, header.primary.on-scroll .mobile__menu-btn i.menu span:before, header.primary.search-visible .mobile__menu-btn i.menu span:after, header.primary.search-visible .mobile__menu-btn i.menu span:before, header.primary.video-visible .mobile__menu-btn i.menu span:after, header.primary.video-visible .mobile__menu-btn i.menu span:before {
@@ -18807,7 +18809,7 @@ img.logo-head-white.logo-white {
 
 .profile {
     width: 50% !important;
-    margin-top: 28px !important;
+    margin-top: 36;
     margin-left: 21px !important;
 }
 
